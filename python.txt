@@ -1,0 +1,898 @@
+"""
+这是我的学习笔记。
+也是一段多行的注释。
+"""
+
+#==============================================================================
+
+print("Hello, World!") # 打印是一个函数
+print('This will also work!') # 单引号也OK
+print(35) # 打印数字
+print(2 * 7) # 可以计算
+
+x = "Python "
+y = "is "
+z = "awesome"
+print(x)
+print(x, y, z) # 同时打印多个字符
+print(x + y + z) 
+
+#==============================================================================
+
+print("Hi!", end=" ") # 输出完成后不换行，仅以空格分隔
+print("My name is \nBob") # 换行
+
+#==============================================================================
+
+a = 5 # 定义变量，int
+b = "Hello" # str
+c = 2.0 # float
+d = True # bool
+
+print(a, b, c, d)
+print(type(a), type(b), type(c), type(d)) #获得变量的类型
+
+c = int(c) # 修改变量类型
+print(type(a), type(b), type(c), type(d))
+
+#==============================================================================
+
+a = input("Your name is?") # input函数输入信息
+print("Hi!", a)
+
+#==============================================================================
+
+print(3 + 5) # 四则运算
+print(3 - 5)
+print(3 * 5)
+print(21 / 5) # 返回浮点数
+print(21 // 5) # 向下取整
+print(12 % 5) # 求余数
+print(2 ** 10) # 求n次方
+
+print(sum([5, 4, 6, -3]))
+print(max(5, 4, 6, -3))
+print(round(3.141592654, 2))
+
+#==============================================================================
+
+a, b = 1, 2 # 快速赋值
+
+
+
+print(a < b) # 比较
+print(a >= b)
+print(a == b)
+print(a != b)
+
+#==============================================================================
+
+x = True
+y = False
+print(not x)    # 输出: False
+print(x and y)  # 输出: False
+print(x or y)   # 输出: True
+
+#============================================================================== if, while, for
+
+if 5 > 2: # if语句
+    print("Five is greater than two!") # 冒号和缩进至关重要
+
+#==============================================================================
+
+x = 17
+if x >= 18:
+	print("Adult")
+elif x <= 10: #多条件结构
+	print("Kid")
+else:
+	print("Teens")
+
+#==============================================================================
+
+i = 1
+while i <= 5: # while循环
+	print(i)
+	i += 1 # 相当于 i = i + 1
+    
+while True:
+    pass # 占位符
+
+#==============================================================================
+
+for i in range(6):
+    print(i, end=" ")  # 从0开始输出6个数
+print()
+
+for i in [10, 20, 30]:  # 遍历 list
+    print(i, end=" ")
+print()
+
+for i in 'good':  # 遍历 str
+    print(i, end=" ")
+print()
+
+for i in range(1, 11):  # 从1开始数10个数
+    if i == 5:
+        break  # 跳出整个循环
+    if i % 2 == 0:
+        continue  # 跳出本次
+    print(i, end=" ")
+print()
+
+#============================================================================================================================================================容器
+#============================================================================== str
+
+s = "Hello World!"
+
+print(s[0]) # 获取第1个字符
+print(s[-1]) # 获取最后1个字符
+
+print(s[3:7]) # 获取第3个字符之后的4个字符。输出：lo W
+print(s[:3]) # 获取前3个字符
+print(s[3:]) # 获取去掉前3个字符的s
+print(s[:-1]) # 获取去掉最后一个字符的s
+print(s[::2]) # 步长2，隔一个取
+print(s[::-1]) # 反转字符串
+
+print(s.find("o")) # 查找字符，返回下标。找不到返回-1
+print(s.count("o")) # 返回字符出现次数
+
+print(s.startswith("He")) # 判断是否以He开头，返回布尔值
+print(s.endswith("He"))
+print("e" in s) # 判断是否包含e
+
+print(s.replace("W", "w")) # 替换
+
+print(s.upper()) #全部大写
+print(s.lower()) #全部小写
+
+#==============================================================================
+
+s = "Hello World!"
+print(s.split(" ")) # 用空格拆分为list
+print(list(s)) # 按字符放入list
+
+chars = ["A", "B", "C"]
+print("/".join(chars)) # 用/连接list
+
+#==============================================================================
+
+print(" D ".strip()) # 去除两端空格
+print(" D ".lstrip()) # 去除左侧空格
+print(" D ".rstrip()) # 去除右侧空格
+
+print("a" * 3) # 重复3次
+
+#==============================================================================
+
+a = "Tom"
+b = "32"
+c = f"{a} is {b} years old." # f-string占位符
+print(c)
+
+#============================================================================== list
+
+nums = [10, 20, 30, "ok"]  # list
+print(nums[0])  # 取特定下标的数
+print(nums[-1])  # 取最后一个数
+nums[1] = 25  # 修改元素 
+print(nums)
+
+print(nums[1:3])  # 获取第1个字符之后的2个字符。输出[2,3]
+print(nums[::2])  # 步长2
+print(nums[::-1])  # 反转, 不改变l
+
+nums = [1, 2, 3, 4, 5, 72]
+nums.append(6)  # 添加元素到末尾
+print(nums)
+nums.insert(1, 99)  # 添加元素到下标1的位置
+print(nums)
+nums.remove(72)  # 删除值为72的元素
+print(nums)
+del nums[3]  # 删除下标为3的元素
+print(nums)
+print(nums.pop(0))  # 删除下标为0的元素，并返回该元素，默认删最后一个
+nums.sort()  # 排序
+print(nums)
+nums.reverse()  # 反转
+print(nums)
+
+#==============================================================================
+
+nums1 = [1, 2, 3, 0, 0, 0]
+nums2 = [2, 5, 6]
+nums3 = [9, 9, 9]
+
+nums3[:] = nums1  # 强行修改nums1内的元素，否则只是更改标签
+new1 = nums1 + nums2  # 拼接两个list
+new2 = nums1 * 2 # 重复元素内容
+
+print(nums1)
+print(nums2)
+print(nums3)
+print(new1)
+print(new2)
+
+#==============================================================================
+
+nums = [1, 2, 3, 4, 5, 72]
+print(5 in nums)  # 判断是否存在5，返回True
+print(nums.index(5))  # 返回值5的下标
+print(nums.count(5))  # 返回值5的出现次数
+print(len(nums))  # 元素个数
+print(max(nums))  # 最大值
+print(min(nums))  # 最小值
+
+double = [x * 2 for x in nums]  # 列表推导式
+evens = [x for x in nums if x % 2 == 0]
+
+
+#==============================================================================
+
+a = [1, 2]
+b = [3, 4]
+c = a + b # 合并list
+d = a * 3 # 重复list的元素
+print(c, d) 
+
+#==============================================================================
+
+a = [[1, 2, 3], [10, 100, 1000], [8, 16, 32]] # 二维list
+print(a[0])
+print(a[1][2])
+
+for m in a:
+    for n in m:
+        print(n) #遍历
+
+#============================================================================== tuple
+
+t = (1, 2, 3, 4, 5) # tuple元组，不可改变
+
+#============================================================================== set
+
+s = {1, 2, 2, 3} # set集合，成员不可重复
+print(s)
+
+s.add(7) # 添加成员
+print(s)
+s.update({15,16,3})  # 将新set合并入s中
+print(s)
+s.remove(3) #移除成员
+print(s)
+print(2 in s) #成员判断
+
+#==============================================================================
+
+a = {1, 2, 3, 4}
+b = {3, 4, 5, 6}
+
+print(a | b) # 并集
+print(a & b) # 交集
+print(a - b) # 差集，输出：1，2
+print(a ^ b) # 对称差，输出：1，2，5，6
+
+#==============================================================================
+
+a = [1, 2, 2, 3, 4, 4, 5]
+b = list(set(a)) # list去重
+
+#============================================================================== dict
+
+d = {"name": "Bob", "age": 25, "city": "New York"} # dict字典，构成key：value的关系
+d2 = dict(name="Bob", age=25, city="New York") # dict()函数
+print(d)
+
+print(d["name"]) # 取特定的值, 找不到则报错
+print(d.get("name")) # 取特定的值，找不到返回None
+
+print(d.keys()) # 获取所有的key
+print(d.values()) # 获取所有的value
+print(d.items()) # 获取所有的key：value
+
+d["age"] = 26 # 已存在则修改value
+d["gender"] = "Male" # 不存在则创建key：value
+d.update({'age': 26, 'birth': '1988-06-04'}) # 将新dict合并入d中
+print(d)
+
+
+d.pop("city") #删除key
+print("city" in d)
+
+for k, v in d.items():
+    print(k, "is", v, end = "   ") # 遍历
+    
+#============================================================================================================================================================进阶
+#============================================================================== Built-in Functions
+
+my_list = ['python', 'java', 'c++']
+for index, value in enumerate(my_list): # 获取的索引和元素，不需要用len来获取长度
+    print(index, value)
+
+#==============================================================================
+
+names = ["Alice", "Bob", "Charlie"]
+scores = [85, 92, 78]
+for name, score in zip(names, scores): # 遍历zip，它是迭代器，遍历完成后消失
+    print(f"{name}‘s score is {score}! ")
+
+#==============================================================================
+
+my_list1 = [17, 5, 21, 10]
+my_list2 = sorted(my_list1) # sorted不改变原始list
+
+print(my_list1)
+print(my_list2)
+
+#============================================================================== def
+
+def f(x): # 定义函数
+    y = 2 * x + 1
+    return y
+print(f(2))
+
+#==============================================================================
+
+def f(x1, x2=0): # 定义多个参数的函数, x的默认值为0
+    y1 = x1 + 1 
+    y2 = x2 * 2
+    return y1, y2 # 返回多个参数。
+a, b = f(2, 7) 
+print(b)
+print(f(1))
+
+#==============================================================================
+
+a = [3, 5, 3, 6]
+def mysum(mylist): # 调入的参数可以是list
+    res = 0
+    for i in mylist:
+        res = res + i 
+    return res
+print(mysum(a))
+
+#============================================================================== class
+
+class CarStock: # 定义一个汽车库存的class类
+    def __init__(self, brand, color, price, quantity): # 自动运行的初始化函数，传入一系列参数。
+        self.b = brand #构建属性
+        self.c = color
+        self.p = price
+        self.q = quantity
+    def info(self): # 定义方法（函数）
+        print(f"this is a {self.c} {self.b}.")
+    def value(self):
+        return self.p * self.q
+
+car1 = CarStock("HONDA", "Red", 100, 4) # 创建实例（对象）
+car2 = CarStock("BMW", "Black", 150, 2)
+
+car1.info() # 调用方法
+print("Stock value is ", car1.value())
+print()
+car2.info()
+print("Stock value is ", car2.value())
+print(car1.b) # 使用属性
+
+#============================================================================== try
+
+try:
+    print(3 / 0)
+    print(3 + 3)
+
+except ZeroDivisionError:
+    print('Division by zero')
+except Exception as e:
+    print(f'Unknown error: {e}')
+finally:
+    print('End')
+
+#============================================================================================================================================================包
+#============================================================================== import
+
+import math # 加载包 math
+print(math.sqrt(3))
+
+import datetime as dt #加载并修改包名
+print(dt.datetime.now())
+
+from random import randrange #只加载特定的函数
+print(randrange(1,100))
+
+#============================================================================== collections
+
+from collections import Counter  # Counter计数器
+text = "I am programming"
+text_c = Counter(text)
+print(text_c)
+print(text_c.most_common(2)) # 获取高频元素
+
+c = Counter(a = 2, b = 1, c = 4, d = 1)
+print(list(c.elements()))
+
+c.update(["a","a","a"]) # 并集追加
+
+print(c.get("a"))
+print(c)
+
+for k, v in c.items():
+    if v == 1:
+        print(k, end=" ")
+
+#==============================================================================
+
+from collections import defaultdict
+
+d = defaultdict(int) # 默认value为0，计数
+words = ["apple", "banana", "apple", "orange", "banana", "apple"]
+for i in words:
+    d[i] += 1  # 即使apple之前不存在，也不会报错，直接从0开始+1
+print(d)
+
+#==============================================================================
+
+from collections import defaultdict
+
+items = [("M", "Bob"),("F", "Linda"),("M", "John"),("M", "Steven"),("F", "Sarah")] 
+d2 = defaultdict(list) # 归类，改为 set <- list可以去重归类
+for i, n in items:
+    d2[i].append(n)
+print(d2)
+
+#==============================================================================
+
+from collections import namedtuple
+
+Point = namedtuple('Point', ['x', 'y'])  # 创建了一个类，为这个类命名，并为两个元素命名
+p = Point(10, 20)  # 创建了实例 p
+
+print(p)
+print(p.x, p.y)
+print(p[0])
+
+#==============================================================================
+
+from collections import deque
+
+d = deque(["apple", "banana"]) # 双端队列
+d.append("orange") # 添加内容
+d.appendleft("grape")
+print(d)
+
+d.pop() #删除内容
+d.popleft()
+print(d)
+
+#============================================================================================================================================================算法
+#==============================================================================递归 Recursion，动态规划 Dynamic Programming
+
+def f(x):  # 斐波那契数列：f(0) = 0，f(1) = 1，f(x) = f(x-1) + f(x-2)
+    if x == 0: return 0
+    if x == 1: return 1
+    return f(x - 1) + f(x - 2)  # 递归 Recursion
+
+d = {0: 0, 1: 1} #  记忆化递归：自顶向下 Top-Down DP
+def f(x):
+    if x in d : return d[x]
+    d[x] = f(x - 1) + f(x - 2)
+    return d[x]
+
+def f(x): # 迭代循环：自底向上 Bottom-Up DP
+    d = {0: 0, 1: 1}
+    if x in d : return d[x]
+    for i in range(2, x+1):
+        d[i] = d[i-1] + d[i-2]
+    return d[x]
+
+for i in range(1, 100000): print(i, f(i))
+
+
+#==============================================================================滑动窗口 Sliding Window
+
+s = 'dskjfaigks'  # 无重复字符的最长子串长度
+
+ans = 1
+if len(s) <= 1:
+    ans = len(s)
+else:
+    wind = {s[0]: 0}
+    left = 0
+    for right in range(1, len(s)):
+        if s[right] in wind:
+            ans = max(ans, right - left)
+            newleft = wind[s[right]] + 1
+            for i in range(left, newleft):
+                wind.pop(s[i])
+            left = newleft
+        else:
+            ans = max(ans, right - left + 1)
+        wind[s[right]] = right
+print(ans)
+
+#==============================================================================广度优先搜索 Breadth-First Search (BFS)
+
+nums = [1, 2, 3] # 全排列
+
+def f(nums: list[int]) -> list[list[int]]:
+    curr = [[]]
+    for l in range(1, len(nums) + 1): # 逐层检索
+        nex = []
+        for c in curr:  # 逐个提取上一步的结果
+            for n in nums:
+                if n not in c: # 剪枝
+                    nex.append(c + [n])  # 列表拼接，例如：[1,2] + [3] = [1,2,3]
+        curr = nex  # 关键！重新指向
+    return curr
+
+print(f(nums))
+
+#==============================================================================回溯 Backtracking， 深度优先搜索 Depth First Search
+
+nums = [1, 2, 3]  # 全排列
+
+def f(nums: list[int]) -> list[list[int]]:
+    result = []
+    path = []  # 维护当前路径
+    n = len(nums)
+    is_able = [True] * n  # 维护剩余可选项
+
+    def g():  # 回溯递归函数，深度优先搜索
+        if len(path) == n:  # 终止条件
+            result.append(path.copy())
+            return
+        else:
+            for ind, num in enumerate(nums):  # 获取所有的可选项
+                if is_able[ind]:  # 剪枝
+                    path.append(num)  # 保存结果
+                    is_able[ind] = False
+
+                    g()  # 钻入下一层
+
+                    path.pop()  # 关键！恢复状态
+                    is_able[ind] = True
+
+    g()
+    return result
+
+print(f(nums))
+
+#==============================================================================
+
+digits = "23"
+
+dmap = {0: '', 1: '', 2: 'abc', 3: 'def', 4: 'ghi', 5: 'jkl', 6: 'mno', 7: 'pqrs', 8: 'tuv', 9: 'wxyz'}
+prelist = [''] # 定义树的节点
+for digit in digits: # 逐个取数字
+    curlist = [] # 新建list用于存放结果
+    for r in prelist: # 对旧list中的每一个数字进行操作，用2层循环建立新的结果list
+        for char in dmap[int(digit)]:
+            curlist.append(r + char)
+    prelist = curlist # 关键！重新指向，将当前的结果list作为树节点进行下一轮循环。
+print(prelist)
+
+#==============================================================================链表
+
+class ListNode:  # 链表
+    def __init__(self, val=0, next=None):  # 初始方法
+        self.val = val
+        self.next = next
+
+
+node1 = ListNode(1)
+node2 = ListNode(2)
+node3 = ListNode(3)
+
+node1.next = node2
+node2.next = node3
+
+node3.next = ListNode(4)
+node3.next.next = ListNode(5)
+
+curr = node1  # 这个node1也叫head
+while curr is not None:  # 遍历链表
+    print(curr.val, end=" > ")
+    curr = curr.next
+print("None")
+
+#==============================================================================
+
+class ListNode: # 链表
+
+    def __init__(self, val=0, next=None): # 初始方法
+        self.val = val
+        self.next = next
+
+    @classmethod # 类方法
+    def from_list(cls, nodelist): 
+        if not nodelist:
+            return None
+
+        head = cls(nodelist[0])
+        curr = head
+        for val in nodelist[1:]:
+            curr.next = cls(val)
+            curr = curr.next
+        return head
+
+head = ListNode.from_list([1, 2, 3, 4]) # 使用类方法建立链表
+
+
+curr = head
+while curr is not None: # 遍历链表
+    print(curr.val, end=" -> ")
+    curr = curr.next
+print("None")
+
+#==============================================================================二叉树
+
+class TreeNode:  # 二叉树
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left  # 左分支
+        self.right = right  # 右分支
+
+
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+root.right.left = TreeNode(6)
+root.right.right = TreeNode(7)
+root.left.left.left = TreeNode(8)
+root.left.left.right = TreeNode(9)
+
+
+def pre_order(node):  # 先序遍历
+    if node is None:
+        return
+    print(node.val, end=" ")
+    pre_order(node.left)
+    pre_order(node.right)
+
+
+def in_order(node):  # 中序遍历
+    if node is None:
+        return
+    in_order(node.left)
+    print(node.val, end=" ")
+    in_order(node.right)
+
+
+def post_order(node):  # 后序遍历
+    if node is None:
+        return
+    in_order(node.left)
+    in_order(node.right)
+    print(node.val, end=" ")
+
+pre_order(root)  # 调用函数
+print()
+in_order(root)
+print()
+post_order(root)
+print()
+
+#==============================================================================
+
+class TreeNode:  # 二叉树
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left  # 左分支
+        self.right = right  # 右分支
+
+root = TreeNode(1)
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+
+
+def level_order(root):  # 广度优先搜索：标准单队列BFS
+    queue = [root]
+    while len(queue) > 0:
+        node = queue.pop(0) # 弹出上一层的node，同时赋值给node
+        print(node.val, end=" ")
+        if node.left is not None:  # 保存子node，为下次循环做准备
+            queue.append(node.left)
+        if node.right is not None:
+            queue.append(node.right)
+level_order(root)
+
+
+def level_order2(root):  # 广度优先搜索：分层BFS
+    curr = [root]  # 当前层的节点列表
+    while curr:
+        nex = []  # 下一层的节点列表
+        for node in curr:
+            print(node.val, end=" ")  # 直接打印当前节点
+            if node.left is not None:
+                nex.append(node.left)
+            if node.right is not None:
+                nex.append(node.right)
+        curr = nex  # 进入下一层
+level_order2(root)
+
+
+#==============================================================================
+
+class TreeNode:  
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left  
+        self.right = right  
+
+    @classmethod
+    def from_list(cls, arr):  # 构建用list导入的方法
+        if not arr or arr[0] is None:
+            return None
+        root = cls(arr[0])
+        queue = [root]
+        i = 1
+        while queue and i < len(arr):
+            current = queue.pop(0)
+            if i < len(arr) and arr[i] is not None:
+                current.left = cls(arr[i])  
+                queue.append(current.left)
+            i += 1
+            if i < len(arr) and arr[i] is not None:
+                current.right = cls(arr[i])  
+                queue.append(current.right)
+            i += 1
+        return root
+
+
+arr = [3, 9, 20, None, None, 15, 7]
+root = TreeNode.from_list(arr)
+
+
+def print_level_order(root):  # 打印整棵树为 list
+    if not root:
+        print("None")
+        return
+    queue = [root]
+    result = []
+    while queue:
+        node = queue.pop(0)
+        if node:
+            result.append(str(node.val))
+            queue.append(node.left)
+            queue.append(node.right)
+        else:
+            result.append("None")
+    while result and result[-1] == "None":
+        result.pop()
+    print(result)
+
+
+print_level_order(root)
+
+#============================================================================== 矩阵
+
+matrix = [[1, 3, 1, 8], [1, 5, 1, 5], [4, 2, 1, 2]]
+
+for i in matrix:  # 打印矩阵
+    print(i)
+print()
+
+m = len(matrix)
+n = len(matrix[-1])
+
+matrix2 = []  # 建立空矩阵
+for i in range(m):
+    matrix2.append([0] * n)
+
+matrix2[0][0] = 0  # 赋值矩阵
+matrix2[0][1] = 1
+matrix2[1][0] = 1
+matrix2[1][1] = 2
+
+for i in range(0, m):
+    for j in range(0, n):  # 遍历矩阵
+        if matrix2[i][j] == 0: matrix2[i][j] = '+'
+
+for i in matrix2:  # 打印矩阵
+    print(i)
+print()
+
+
+#==============================================================================
+#==============================================================================
+#==============================================================================
+#==============================================================================
+#==============================================================================
+#==============================================================================
+#==============================================================================
+#==============================================================================
+#==============================================================================
+#==============================================================================
+#==============================================================================
+#==============================================================================
+#==============================================================================
+#==============================================================================
+
+print(ord('A')) # Unicode码操作
+print(ord('a'))
+print(chr(69))
+print(chr(105))
+
+#==============================================================================
+
+with open("output.txt", "w") as f:  # 新建并写入文件，如存在则覆盖
+    f.write("The first line.\n")
+    f.write("The 2nd line.\n")
+
+with open("output.txt", "a") as f:  # 在文件末尾追加内容, 如不存在则新建
+    f.write("End...\n")
+
+with open("output.txt", "r") as f:
+    print(f.read())  # 读文件
+
+with open("output.txt", "r") as f:
+    for line in f:  # 逐行读
+        print('Line1: ' + line)
+
+#==============================================================================
+
+print(bin(15)[2:]) # 10进制转2进制
+print(oct(15)[2:]) # 10进制转8进制
+print(hex(15)[2:]) # 10进制转16进制
+
+print(int('1010',2)) # 2进制转10进制
+print(int('aa',16))
+
+#============================================================================== tkinter
+
+import os
+import tkinter
+
+def btn1_click():
+    filename = []
+    for f in os.listdir():
+        if os.path.isfile(f):
+            filename.append(f)
+
+    strfilename = "\n".join(filename)
+    textbox.delete("1.0", tkinter.END)
+    textbox.insert("1.0", strfilename)
+
+def btn2_click():
+    filename = textbox.get("1.0", tkinter.END)
+
+    with open('files_output.txt', 'w') as f:
+        f.write(filename)
+
+def btn3_click():
+    textbox.delete("1.0", tkinter.END)
+
+'''GUI'''
+
+main_window = tkinter.Tk()
+main_window.title("Get Filenames")
+main_window.geometry("590x440")
+
+frame = tkinter.Frame(main_window)
+frame.grid(row=0, column=0, padx=0, pady=0, sticky="w")
+
+button1 = tkinter.Button(frame, text="  Get  ", command=btn1_click)
+button1.grid(row=0, column=1, padx=10, pady=10, )
+
+button2 = tkinter.Button(frame, text=" Save ", command=btn2_click)
+button2.grid(row=0, column=2, padx=10, pady=10)
+
+button3 = tkinter.Button(frame, text=" Clear ", command=btn3_click)
+button3.grid(row=0, column=3, padx=10, pady=10)
+
+label1 = tkinter.Label(main_window, text="Filename list is below: ")
+label1.grid(row=1, column=0, padx=10, pady=0, sticky="w")
+
+textbox = tkinter.Text(main_window)
+textbox.grid(row=2, column=0, padx=10, pady=0)
+
+label2 = tkinter.Label(main_window, text="Copyright © 2026 AmamiyaLin All Rights Reserved")
+label2.config(fg="gray")
+label2.grid(row=3, column=0, padx=10, pady=20, sticky="w")
+
+main_window.mainloop()
+
